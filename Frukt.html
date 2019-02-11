@@ -1,0 +1,87 @@
+<!Doctype html>
+<html>
+<head>
+  <title> </title>
+  <meta charset="utf-8">
+</head>
+<style>
+body{
+  padding-left:20px;
+  padding-top:10px;
+  font-family:arial;
+}
+
+.underline{
+  text-decoration: underline;
+}
+#resultatdiv{
+  position:fixed;
+  top:230px;
+  left:400px;
+  padding:5px;
+}
+
+#pid1,#navnoutput{
+  display:inline-block;
+  margin:0;
+}
+</style>
+<body>
+  <h1> Dine favorittfrukter </h1><br><br>
+  <p> Elevens navn </p>
+  <input id="navninput" placeholder="Navnet ditt"><br><br><br><br>
+  <div id="valg">
+    <input type="checkbox" name="frukt" value="Eple"> Eple <br>
+    <input type="checkbox" name="frukt" value="Ananas"> Ananas <br>
+    <input type="checkbox" name="frukt" value="Mango"> Mango <br>
+    <input type="checkbox" name="frukt" value="Banan"> Banan <br>
+    <input type="checkbox" name="frukt" value="Jordbær"> Jordbær <br>
+    <input type="checkbox" name="frukt" value="Blåbær"> Blåbær <br>
+    <input type="checkbox" name="frukt" value="Bringebær"> Bringebær <br>
+    <input type="checkbox" name="frukt" value="Vannmelon"> Vannmelon <br>
+    <input type="checkbox" name="frukt" value="Pasjonsfrukt"> Pasjonsfrukt <br>
+    <input type="checkbox" name="frukt" value="Appelsin"> Appelsin <br>
+ </div>
+ <div id="resultatdiv">
+   <p id="pid1"></p>
+   <p id="navnoutput"></p>
+   <ul id="ul1">
+   </ul>
+ </div>
+<script>
+var resultatdiv = document.getElementById("resultatdiv");
+var frukter = document.querySelectorAll("input[type='checkbox']");
+for(var i=0;i<frukter.length;i++){
+  frukter[i].addEventListener("change",leggTil);
+}
+var navninput=document.getElementById("navninput");
+navninput.addEventListener("input",navn);
+
+function leggTil(){
+
+  var liste = document.getElementById("ul1");
+  var nyttpunkt = document.createElement("li");
+
+  if(this.checked){
+    for(var i=0;i<frukter.length;i++){
+      nyttpunkt.innerHTML=this.value;
+    }
+
+
+    liste.appendChild(nyttpunkt);
+  }else{
+    liste.removeChild(liste.lastChild);
+  }
+}
+function navn(){
+document.getElementById("pid1").innerHTML = "Favorittfruktene til:"
+document.getElementById("navnoutput").innerHTML=navninput.value;
+if(navninput.value==""){
+  resultatdiv.style.outline="";
+}else{
+  resultatdiv.style.outline="1px solid black";
+}
+}
+</script>
+</body>
+</html>
