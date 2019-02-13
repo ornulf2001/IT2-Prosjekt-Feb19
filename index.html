@@ -1,21 +1,42 @@
-<!DOCTYPE html>
-<html lang="nb">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="stilark.css" />
-		<title>Tittel</title>
-		<style>
-		
-		</style>
-	</head>
-	<body>
-	
-		<script>
-			
+<!Doctype html>
+<html>
+<head>
+  <title> </title>
+  <meta charset="utf-8">
+</head>
+<body>
+    <br>
+    <p>input2</p><input type="text"	id="input2"> <button onclick="leggeTil()">Legg til ord i ordlista </button><br><br><br><br>
+    <p>input1</p>	<input type="text" id="input1">
+    <p id="pid1"></p>
 
-			
-		</script>
+
+<script>
+	var input1 = document.getElementById("input1");
+	var input2 = document.getElementById("input2");
+	input1.addEventListener("input",søke);
+	var array1 = []
+
+
+	function leggeTil(){
+		array1.push(input2.value);
+		input2.value= "";
+		console.log(array1);
+	}
+
+	function søke(){
+
+		if(array1.includes(input1.value)){
+			document.getElementById("pid1").innerHTML = input1.value;
+		}else{
+			document.getElementById("pid1").innerHTML = "";
+
+		}
+
+	}
+
 	
-	</body>
+
+</script>
+</body>
 </html>
