@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="nb">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../css/stilark.css" />
+		<title>Tittel</title>
+		<style>
+		
+		</style>
+	</head>
+	<body>
+		 <h1> OVERSKIFT </h1>
+		 
+		 <h3> Linker </h3>
+		 <input type="text"  id ="link" placeholder="link"> <button onclick="registrerlink()">Registrer</button> <br>
+		 <p id="div"></p>
+		
+		<h3> Bilder </h3>
+		 <input type="text" id="bilde" placeholder="bilde"> <button onclick="registrerbilde()">Registrer</button> <br> <br>
+		 <p id="div2"></p>
+		 
+		 <h3> Sidetall i bok </h3>
+		 <input type="text" id="side" placeholder="sidetall"> <button onclick="registrersidetall()">Registrer</button> <br> <br>
+		 <p id="div3"></p>
+		 
+		<h3> Eksempler </h3>
+		 <textarea placeholder="Skirv eksempler"> </textarea> <br>
+		 
+		
+		 
+		 
+		<script>
+			
+			//Linker
+			var linker = [];
+			var linkEl = document.querySelector("#link");
+			console.log(linker);
+			
+			
+			function vislink(){
+			var tabell = "";
+			
+			tabell = "<table><tr><th>Linker</th></tr>";
+			for (i=0; i<linker.length; i++){
+				tabell += "<tr><td>"+linker[i]+"</td>";
+			}
+			
+			tabell +="</table>";
+			document.getElementById("div").innerHTML = tabell;
+			}
+			
+
+			function registrerlink() {
+				linker.push(linkEl.value);
+				vislink();
+			}
+			
+
+			
+			//Bilder
+			var bilder = [];
+			var bildeEl = document.querySelector("#bilde");
+			
+			function visbilde(){
+			var visbilde = "";
+			
+			
+			for (i=0; i<bilder.length; i++){
+				visbilde += "<img src = " +bilder[i]+ " >";
+			}
+			
+			document.getElementById("div2").innerHTML = visbilde;
+			}
+			
+
+			function registrerbilde() {
+				bilder.push(bildeEl.value);
+				visbilde();
+			}
+
+			//Ekspempler
+			
+			//Sidetall
+			var sidetall = [];
+			var sideEl = document.querySelector("#side");
+			
+			
+			function visside(){
+			var tabell = "";
+			
+			tabell = "<table><tr><th>Sidetall</th></tr>";
+			for (i=0; i<sidetall.length; i++){
+				tabell += "<tr><td> s. "+sidetall[i]+"</td>";
+			}
+			
+			tabell +="</table>";
+			document.getElementById("div3").innerHTML = tabell;
+			}
+			
+
+			function registrersidetall() {
+				sidetall.push(sideEl.value);
+				visside();
+			}
+			
+		</script>
+	
+	</body>
+</html>
