@@ -1,0 +1,30 @@
+<!Doctype html>
+<html>
+<head>
+  <title> </title>
+  <meta charset="utf-8">
+</head>
+<body>
+    <input type="text" id="input1">
+    <p id="pid1"></p>
+
+
+<script>
+	var input1 = document.getElementById("input1");
+	input1.addEventListener("input",myfunction);
+
+
+	function myfunction(){
+
+		var array1 = ["Hello","There","General","Kenobi"]
+		if(array1.includes(input1.value)){
+			document.getElementById("pid1").innerHTML = input1.value;
+		}else{
+			document.getElementById("pid1").innerHTML = "";
+
+		}
+
+	}
+</script>
+</body>
+</html>
