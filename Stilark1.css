@@ -1,0 +1,75 @@
+body {
+  font-size: 15px;
+  font-family: "Century Gothic"; Arial, sans-serif;
+  background-color: #f2f2f2;
+  color: #323232;
+  text-align:center;
+}
+
+/*div.box {
+  float: right;
+  background-color: white;
+  width: 1300px;
+  border: 1px black;
+  margin: 0 auto;
+  margin-top: 5px;
+  padding: 5px ;
+  text-align: center;
+  color: black;
+  box-shadow: 0px 0px 1px 2px #555;
+  border-radius: 10px;
+}
+*/
+
+/* selve side-navigasjonsmenyen */
+.sidenav {
+  height: 100%; /* Full-høyde, like høy som siden */
+  width: 0; /* bredde, kan endres i js */
+  position: fixed; /* bli der den er */
+  z-index: 1; /* være på toppen */
+  top: 0; /* bli på toppen */
+  left: 0;
+  background-color: lightgrey;
+  overflow-x: hidden; /* horisontal skrolling: av */
+  padding-top: 60px; /* plasserer innnhold 60px fra toppen */
+  transition: 0.5s; /* 0.5 sekunder åpningseffekt */
+  border:;
+  border-radius: 20px;
+  float: left;
+}
+
+/* navigasjonsmeny-linker */
+.sidenav a {
+  padding: 4px 4px 12px 32px;
+  text-decoration: none;
+  font-size: 30px;
+  color: Black;
+  display: block;
+  transition: 0.3s;
+}
+
+/* bytte farge ved å holde mus over */
+.sidenav a:hover {
+  color: red;
+}
+
+/* Posisjoner og tilpass x-knappen på sidebaren */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Kan brukes hvis vi vil dytte innholdet til høyre når vi åpner sidebaren */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+/* I tilfelle små skjermer */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
